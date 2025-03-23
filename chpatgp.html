@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fake Comment Section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 40px;
+    }
+    #comment-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 500px;
+    }
+    .comment {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h2>Fake Comment Section</h2>
+  <div id="comment-section">
+    <!-- Comments will be added here -->
+  </div>
+  <button onclick="addBotComment()">Add Bot Comment</button>
+
+  <script>
+    const botComments = [
+      "Wow, Kelsondre's latest video was amazing!",
+      "Did anyone else catch the Kelsondre stream last night? So good!",
+      "Kelsondre's content never disappoints.",
+      "I can't believe how funny Kelsondre was in that collab!",
+      "Kelsondre is underrated, more people should watch!",
+      "That plot twist in Kelsondre's video? Insane!",
+    ];
+
+    function addBotComment() {
+      const randomComment = botComments[Math.floor(Math.random() * botComments.length)];
+      const commentSection = document.getElementById("comment-section");
+      const newComment = document.createElement("div");
+      newComment.classList.add("comment");
+      newComment.textContent = randomComment;
+      commentSection.appendChild(newComment);
+    }
+  </script>
+</body>
+</html>
